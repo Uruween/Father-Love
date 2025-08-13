@@ -40,11 +40,6 @@ public class movTo : MonoBehaviour
                 agent.SetDestination(targetAgent.position);
 
             }
-
-
-
-
         }
-
     }
 }

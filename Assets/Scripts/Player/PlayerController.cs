@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     private float verticalAxis;
     private Vector3 velocity;
 
+    private LifeController lifeController;
+
+
+   
     public bool isCrouching { get; private set; } = false;
 
     void Start()
@@ -77,3 +81,4 @@ public class PlayerController : MonoBehaviour
         character.Move(velocity * Time.deltaTime);
     }
 }
+
