@@ -9,6 +9,5 @@ public class DamangeManager : MonoBehaviour
         {
             character.Damage(10f);
         }
-
     }
 }

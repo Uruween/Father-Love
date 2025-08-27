@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class movTo : MonoBehaviour
+public class enemyBasic : MonoBehaviour
 {
     private NavMeshAgent agent;
     [SerializeField] Transform targetAgent;
@@ -13,6 +13,9 @@ public class movTo : MonoBehaviour
     [SerializeField] float actionDistance;
     [SerializeField] float speed;
     [SerializeField] float currDistance;
+    [SerializeField] float live; 
+
+
 
     public bool onAwake;
 
@@ -24,7 +27,7 @@ public class movTo : MonoBehaviour
         {
             agent.SetDestination(targetAgent.position);
         }
-
+        
     }
 
     // Update is called once per frame
@@ -40,6 +43,16 @@ public class movTo : MonoBehaviour
                 agent.SetDestination(targetAgent.position);
 
             }
+        }
+    }
+
+    public void LifeEnemy(float damage)
+    {
+        live -= damage;
+        Debug.Log(damage + " " + live);
+        if (live < 0)
+        {
+            gameObject.SetActive(false);
         }
     }
 }
