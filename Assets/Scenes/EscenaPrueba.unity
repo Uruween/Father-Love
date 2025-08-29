@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6710836318294322432, guid: 07c6c74fd6e338f448ce602a1c24c1ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -445,7 +449,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: f448d285b12de964eaf713eead2566b8, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5058e0f9b6249eb4c91c523ca9b735a9, type: 2}
   m_BuildHeightMesh: 0
 --- !u!65 &266679196659013230
 BoxCollider:

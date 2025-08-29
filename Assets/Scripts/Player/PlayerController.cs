@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
+        ChangeWorld();
     }
 
     private void Movement()
@@ -79,6 +82,22 @@ public class PlayerController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         character.Move(velocity * Time.deltaTime);
+    }
+    private void ChangeWorld()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (currentSceneName == "EscenaPrueba")
+            {
+                SceneManager.LoadScene("PruebaCambioMundo");
+            }
+            else
+            {
+                SceneManager.LoadScene("EscenaPrueba");
+
+            }
+        }
     }
 }
 
