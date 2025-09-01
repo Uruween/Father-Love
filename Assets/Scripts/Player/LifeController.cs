@@ -17,6 +17,7 @@ public class LifeController : MonoBehaviour
         if (life < 0)
         {
             life = 0;
+            gameObject.SetActive(false);
         } 
     }
 }
