@@ -14,7 +14,11 @@ public class CameraController : MonoBehaviour
     private float pitch;
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked; 
+        if (target == null)
+        {
+            target = GameObject.Find("Target").transform;
+        }
     }
 
     void Update()

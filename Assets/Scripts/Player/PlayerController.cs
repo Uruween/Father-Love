@@ -16,13 +16,21 @@ public class PlayerController : MonoBehaviour
 
     private LifeController lifeController;
 
-
-   
+    [SerializeField] private PlayerData playerData;
     public bool isCrouching { get; private set; } = false;
 
     void Start()
     {
         character = GetComponent<CharacterController>();
+
+        if (playerData != null)
+        {
+            transform.position = playerData.position;
+            if (lifeController != null)
+            {
+                lifeController.Health(playerData.health - lifeController.GetHealth()); 
+            }
+        }
     }
 
     void Update()
@@ -84,12 +92,23 @@ public class PlayerController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         character.Move(velocity * Time.deltaTime);
+        
+        if (playerData != null)
+        {
+            playerData.position = transform.position;
+            if (lifeController != null)
+            {
+                playerData.health = lifeController.GetHealth();
+            }
+        }
     }
     private void ChangeWorld()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         if (Input.GetKeyDown(KeyCode.P))
         {
+            SavePlayerData();
+
             if (currentSceneName == "EscenaPrueba")
             {
                 SceneManager.LoadScene("PruebaCambioMundo");
@@ -97,7 +116,17 @@ public class PlayerController : MonoBehaviour
             else
             {
                 SceneManager.LoadScene("EscenaPrueba");
-
+            }
+        }
+    }
+    private void SavePlayerData()
+    {
+        if (playerData != null)
+        {
+            playerData.position = transform.position;
+            if (lifeController != null)
+            {
+                playerData.health = lifeController.GetHealth();
             }
         }
     }
