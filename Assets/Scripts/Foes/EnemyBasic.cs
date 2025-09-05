@@ -11,28 +11,29 @@ public class enemyBasic : MonoBehaviour
     [SerializeField] float timeBefore;
     [SerializeField] float time;
     [SerializeField] float actionDistance;
-    [SerializeField] float speed;
     [SerializeField] float currDistance;
     [SerializeField] float attackDistance;
     [SerializeField] float live; 
+    private Rigidbody rb;
 
 
 
     public bool onAwake;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator.SetBool("Hit", false);
         if (onAwake)
         {
             agent.SetDestination(targetAgent.position);
         }
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!onAwake)
         {
@@ -43,12 +44,13 @@ public class enemyBasic : MonoBehaviour
             {
                 agent.SetDestination(targetAgent.position);
                 agent.isStopped = false;
-                if (currDistance < attackDistance)
+                animator.SetBool("Hit", false);
+                if (currDistance <= attackDistance)
                 {
                     agent.isStopped = true;
+                    animator.SetBool("Hit",true);
                 }
             }
-            
         }
     }
 

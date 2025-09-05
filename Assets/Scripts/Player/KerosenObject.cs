@@ -12,5 +12,4 @@ public class KerosenObject : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    
 }

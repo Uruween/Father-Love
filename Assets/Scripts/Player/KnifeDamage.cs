@@ -29,10 +29,13 @@ public class KnifeDamage : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Chaser"))
+        if (other.CompareTag("Enemy"))
         {
             enemyBasic enemy = other.GetComponent<enemyBasic>();
             enemy.LifeEnemyBasic(damage);
+        }
+        if (other.CompareTag("Chaser"))
+        {
             ChaserController chaser = other.GetComponent<ChaserController>();
             chaser.LifeChaser(damage);
         }

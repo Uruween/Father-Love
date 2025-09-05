@@ -3,6 +3,11 @@ using UnityEngine;
 public class LifeController : MonoBehaviour
 {
     [SerializeField] private float life = 100f;
+    [SerializeField] GameObject cm;
+    private void Start()
+    {
+        cm.SetActive(false);
+    }
 
     public void Health(float heal)
     {
@@ -20,6 +25,7 @@ public class LifeController : MonoBehaviour
         {
             life = 0;
             gameObject.SetActive(false);
+            cm.SetActive(true);
         }
     }
     public float GetHealth()
