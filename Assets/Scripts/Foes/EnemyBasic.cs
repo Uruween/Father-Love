@@ -13,6 +13,7 @@ public class enemyBasic : MonoBehaviour
     [SerializeField] float actionDistance;
     [SerializeField] float speed;
     [SerializeField] float currDistance;
+    [SerializeField] float attackDistance;
     [SerializeField] float live; 
 
 
@@ -41,12 +42,17 @@ public class enemyBasic : MonoBehaviour
             if (currDistance <= actionDistance)
             {
                 agent.SetDestination(targetAgent.position);
-
+                agent.isStopped = false;
+                if (currDistance < attackDistance)
+                {
+                    agent.isStopped = true;
+                }
             }
+            
         }
     }
 
-    public void LifeEnemy(float damage)
+    public void LifeEnemyBasic(float damage)
     {
         live -= damage;
         Debug.Log(damage + " " + live);
