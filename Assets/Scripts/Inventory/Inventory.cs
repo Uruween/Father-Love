@@ -1,3 +1,4 @@
+using NUnit.Framework.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,57 +6,50 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     //Eventos y delegados inventario
-    public delegate void InventoryUpdatedDelegate ();
-    public InventoryUpdatedDelegate ItemUpdated;
+    public delegate void InventoryUpdatedDelegate();
     public InventoryUpdatedDelegate ItemRemoved;
     public InventoryUpdatedDelegate ItemAdded;
 
 
-    Dictionary<int, int> _items = new()
-    {
-        {3, 10},
-        {7, 6 },
-        {8, 9},
-        {9, 10},
-        {10, 11},
-    };
+    public delegate void ItemUsedDelegate(int itemId);
+    public ItemUsedDelegate ItemUsed;
+
+
+    Dictionary<int, int> _items = new();
 
     public Dictionary<int, int> Items { get => _items; set => _items = value; }
 
-    public void AddItem(int id, int amount)
+    public void AddItem(int id)
     {
         if (!Items.ContainsKey(id))
         {
-            Items.Add(id, amount);
+            Items.Add(id, 1);
             ItemAdded?.Invoke();
         }
         else
         {
-            Items[id] += amount;
-            ItemUpdated?.Invoke();
+            return;
         }
 
         ShowInventory();
     }
 
-    public void RemoveItem(int id, int amount)
+    public void RemoveItem(int id)
     {
         if (Items.ContainsKey(id))
         {
-            Items[id] -= amount;
-
-            if (Items[id] <= 0)
-            {
                 Items.Remove(id);
                 ItemRemoved?.Invoke();
-            } 
-            else 
-            {
-                ItemUpdated?.Invoke();
-            }
         }
 
         ShowInventory();
+    }
+    public void UseItem(int id)
+    {
+        if (Items.ContainsKey(id))
+        {
+            ItemUsed?.Invoke(id);
+        }
     }
 
     public void ShowInventory()

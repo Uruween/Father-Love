@@ -1,0 +1,286 @@
+fileFormatVersion: 2
+guid: 0817be90747787049a8eb34f000d9e8a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LlaveAmarilla
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 80
+        width: 372
+        height: 863
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd4b2f1696169a46acb2009bcfa0f96
+      internalID: -525928436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LlaveVerde
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 80
+        width: 345
+        height: 861
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72c4de92f31666418422c9fe2c7bf70
+      internalID: -143106586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LlaveRoja
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 80
+        width: 375
+        height: 865
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d81f76db4fedc44bb3779c7b6c8c7cb
+      internalID: 1169631818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8112bf152b449c445b58b28bf264067a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LlaveAmarilla: -525928436
+      LlaveRoja: 1169631818
+      LlaveVerde: -143106586
+      Llaves de colores sobre fondo gris_10: -876410062
+      Llaves de colores sobre fondo gris_11: -1055975806
+      Llaves de colores sobre fondo gris_12: -29726368
+      Llaves de colores sobre fondo gris_13: -233827252
+      Llaves de colores sobre fondo gris_14: -503421803
+      Llaves de colores sobre fondo gris_15: 1177743842
+      Llaves de colores sobre fondo gris_16: 2032451616
+      Llaves de colores sobre fondo gris_17: -1553587536
+      Llaves de colores sobre fondo gris_18: 368044721
+      Llaves de colores sobre fondo gris_19: -2075795852
+      Llaves de colores sobre fondo gris_2: 1814335483
+      Llaves de colores sobre fondo gris_21: 1316447366
+      Llaves de colores sobre fondo gris_22: -90810162
+      Llaves de colores sobre fondo gris_23: 1160366646
+      Llaves de colores sobre fondo gris_24: -1506566900
+      Llaves de colores sobre fondo gris_25: 1447283771
+      Llaves de colores sobre fondo gris_26: 1272001391
+      Llaves de colores sobre fondo gris_27: -505228024
+      Llaves de colores sobre fondo gris_28: 376796569
+      Llaves de colores sobre fondo gris_29: 251821756
+      Llaves de colores sobre fondo gris_3: 1669944689
+      Llaves de colores sobre fondo gris_30: -731832062
+      Llaves de colores sobre fondo gris_31: -86415251
+      Llaves de colores sobre fondo gris_32: -922814082
+      Llaves de colores sobre fondo gris_33: -1913227440
+      Llaves de colores sobre fondo gris_34: -951394292
+      Llaves de colores sobre fondo gris_35: -148801315
+      Llaves de colores sobre fondo gris_36: 1778130133
+      Llaves de colores sobre fondo gris_37: -990500338
+      Llaves de colores sobre fondo gris_38: -765401347
+      Llaves de colores sobre fondo gris_39: 1769279507
+      Llaves de colores sobre fondo gris_4: 642144322
+      Llaves de colores sobre fondo gris_40: 856006802
+      Llaves de colores sobre fondo gris_41: -1735401318
+      Llaves de colores sobre fondo gris_42: -2083589009
+      Llaves de colores sobre fondo gris_43: 1707959948
+      Llaves de colores sobre fondo gris_44: 520590691
+      Llaves de colores sobre fondo gris_45: -100964581
+      Llaves de colores sobre fondo gris_46: 175506175
+      Llaves de colores sobre fondo gris_47: -1719770641
+      Llaves de colores sobre fondo gris_48: -581229004
+      Llaves de colores sobre fondo gris_49: -136611864
+      Llaves de colores sobre fondo gris_5: -631357069
+      Llaves de colores sobre fondo gris_50: -995979766
+      Llaves de colores sobre fondo gris_51: 1175293417
+      Llaves de colores sobre fondo gris_52: -1711986960
+      Llaves de colores sobre fondo gris_53: -1423429404
+      Llaves de colores sobre fondo gris_54: -1297878455
+      Llaves de colores sobre fondo gris_55: 1781820516
+      Llaves de colores sobre fondo gris_56: -1049531835
+      Llaves de colores sobre fondo gris_57: -1810755722
+      Llaves de colores sobre fondo gris_58: -1703776503
+      Llaves de colores sobre fondo gris_59: 1848448163
+      Llaves de colores sobre fondo gris_6: -168549442
+      Llaves de colores sobre fondo gris_60: 2067479664
+      Llaves de colores sobre fondo gris_61: 539506854
+      Llaves de colores sobre fondo gris_62: -1362076009
+      Llaves de colores sobre fondo gris_63: 623621340
+      Llaves de colores sobre fondo gris_64: 1766201419
+      Llaves de colores sobre fondo gris_65: -702281919
+      Llaves de colores sobre fondo gris_66: -1076179050
+      Llaves de colores sobre fondo gris_67: 675676062
+      Llaves de colores sobre fondo gris_68: 1718471671
+      Llaves de colores sobre fondo gris_69: -1748767186
+      Llaves de colores sobre fondo gris_7: -1634074707
+      Llaves de colores sobre fondo gris_70: -1293780574
+      Llaves de colores sobre fondo gris_71: -782634571
+      Llaves de colores sobre fondo gris_72: 1689973123
+      Llaves de colores sobre fondo gris_73: -655336000
+      Llaves de colores sobre fondo gris_74: -2014638188
+      Llaves de colores sobre fondo gris_75: -1085909844
+      Llaves de colores sobre fondo gris_76: 585730869
+      Llaves de colores sobre fondo gris_8: 317215302
+      Llaves de colores sobre fondo gris_9: 75581220
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
