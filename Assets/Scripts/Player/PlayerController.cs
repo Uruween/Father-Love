@@ -21,13 +21,17 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private PlayerData playerData;
 
+    public UiInventoryHandle inventory;
+
+    public CameraController cm;
+
     public bool isCrouching { get; private set; } = false;
 
     private void Start()
     {
+
         rb = GetComponent<Rigidbody>();
 
-        // Rigidbody settings: no rotation por f�sica, solo manual
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
         if (playerData != null)
@@ -53,7 +57,6 @@ public class PlayerController : MonoBehaviour
 
     private void HandleInput()
     {
-        // Correr
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveDirection = GetInputDirection() * runSpeed;
@@ -62,8 +65,6 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection = GetInputDirection() * walkSpeed;
         }
-
-        // Agacharse
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             isCrouching = true;
@@ -98,21 +99,14 @@ public class PlayerController : MonoBehaviour
     {
         if (moveDirection == Vector3.zero)
         {
-            // Detener movimiento
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
             return;
         }
-
-        // Mantener la velocidad vertical (gravedad)
         Vector3 velocity = new Vector3(moveDirection.x, rb.linearVelocity.y, moveDirection.z);
 
         rb.linearVelocity = velocity;
-
-        // Rotaci�n suave hacia la direcci�n de movimiento
         Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
-
-        // Guardar posici�n y salud
         if (playerData != null)
         {
             playerData.position = transform.position;
@@ -129,7 +123,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             SavePlayerData();
-
             if (currentSceneName == "EscenaPrueba")
             {
                 SceneManager.LoadScene("PruebaCambioMundo");
@@ -140,12 +133,12 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     private void SavePlayerData()
     {
         if (playerData != null)
         {
             playerData.position = transform.position;
+            
             if (lifeController != null)
             {
                 playerData.health = lifeController.GetHealth();

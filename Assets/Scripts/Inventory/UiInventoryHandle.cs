@@ -13,6 +13,7 @@ public class UiInventoryHandle : MonoBehaviour
     public List<GameObject> list = new();
     public ScrollRect scrollRect;
 
+    private GameObject searchedButton;
     private int selectedItemId;
 
     [SerializeField] CanvasGroup previewPanel;
@@ -25,7 +26,6 @@ public class UiInventoryHandle : MonoBehaviour
         ShowItems();
         inventory.ItemAdded += ShowItems;
         inventory.ItemRemoved += ShowItems;
-        
     }
     public void instaciateButtons()
     {
@@ -42,8 +42,7 @@ public class UiInventoryHandle : MonoBehaviour
         foreach (var item in inventory.Items)
         {
             ItemData itemsData = dataBase.SearchItemByID(item.Key);
-
-            GameObject searchedButton = list.Find(x => x.activeSelf == false);
+            searchedButton = list.Find(x => x.activeSelf == false);
             searchedButton.SetActive(true);
             searchedButton.transform.Find("Icon").GetComponent<Image>().sprite = itemsData.icon;
             searchedButton.GetComponent<Button>().onClick.AddListener(delegate

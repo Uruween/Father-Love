@@ -18,7 +18,6 @@ public class Inventory : MonoBehaviour
     Dictionary<int, int> _items = new();
 
     public Dictionary<int, int> Items { get => _items; set => _items = value; }
-
     public void AddItem(int id)
     {
         if (!Items.ContainsKey(id))

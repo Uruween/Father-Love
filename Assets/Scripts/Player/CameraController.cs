@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] Vector3 normalOffset = new Vector3(0, 2, -4);
     [SerializeField] Vector3 crouchOffset = new Vector3(0, 1.2f, -2f);
     [SerializeField] private PlayerController playerController;
+    public PlayerData playerData;
+    public Vector3 desiredPosition;
 
     private float yaw;
     private float pitch;
@@ -18,7 +20,7 @@ public class CameraController : MonoBehaviour
         if (target == null)
         {
             target = GameObject.Find("Target").transform;
-        }
+        }    
     }
 
     void Update()
@@ -32,7 +34,7 @@ public class CameraController : MonoBehaviour
 
 
         Quaternion rotation = Quaternion.Euler(pitch, yaw, 0);
-        Vector3 desiredPosition = target.position + rotation * offset;
+        desiredPosition = target.position + rotation * offset;
 
         transform.position = desiredPosition;
         transform.LookAt(target);

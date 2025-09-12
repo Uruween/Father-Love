@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144be8544dc801746a37b4d627d165c1, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  position: {x: 9.917555, y: 1.0799999, z: 3.4273324}
+  position: {x: -4.2980866, y: 1.0000001, z: 38.47818}
   health: 100
-  inventoryItems: []
+  inventoryItems:
+  - {fileID: 0}
+  rotationCamera: {x: -0.000000011088559, y: -2.3283064e-10, z: -0.000000015133992}

@@ -12,17 +12,22 @@ public class GameManager : MonoBehaviour
 
     private bool isInventoryOpen = false;
 
+    public CameraController cm;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+    private void Start()
+    {
+        cm.GetComponent<CameraController>();
     }
 
     private void Update()
@@ -44,9 +49,10 @@ public class GameManager : MonoBehaviour
         inventoryCanvas?.SetActive(true);
         isInventoryOpen = true;
         Time.timeScale = 0f;
-
+        cm.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+       
     }
 
     public void CloseInventory()
@@ -54,7 +60,7 @@ public class GameManager : MonoBehaviour
         inventoryCanvas?.SetActive(false);
         isInventoryOpen = false;
         Time.timeScale = 1f;
-
+        cm.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
