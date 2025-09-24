@@ -17,13 +17,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveDirection;
 
-    private LifeController lifeController;
 
-    [SerializeField] private PlayerData playerData;
-
-    public UiInventoryHandle inventory;
-
-    public CameraController cm;
+    public Camera cm;
 
     public bool isCrouching { get; private set; } = false;
 
@@ -33,15 +28,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        cm.backgroundColor = Color.black;
 
-        if (playerData != null)
-        {
-            transform.position = playerData.position;
-            if (lifeController != null)
-            {
-                lifeController.Health(playerData.health - lifeController.GetHealth());
-            }
-        }
     }
 
     private void Update()
@@ -107,14 +95,7 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = velocity;
         Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
-        if (playerData != null)
-        {
-            playerData.position = transform.position;
-            if (lifeController != null)
-            {
-                playerData.health = lifeController.GetHealth();
-            }
-        }
+       
     }
 
     private void ChangeWorld()
@@ -122,27 +103,15 @@ public class PlayerController : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         if (Input.GetKeyDown(KeyCode.P))
         {
-            SavePlayerData();
-            if (currentSceneName == "EscenaPrueba")
+            if (cm.backgroundColor == Color.black)
             {
-                SceneManager.LoadScene("PruebaCambioMundo");
+                cm.backgroundColor = Color.white;
             }
-            else
+            else if (cm.backgroundColor == Color.white)
             {
-                SceneManager.LoadScene("EscenaPrueba");
-            }
-        }
-    }
-    private void SavePlayerData()
-    {
-        if (playerData != null)
-        {
-            playerData.position = transform.position;
-            
-            if (lifeController != null)
-            {
-                playerData.health = lifeController.GetHealth();
+                cm.backgroundColor = Color.black;
             }
         }
     }
+   
 }
