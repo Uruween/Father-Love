@@ -926,6 +926,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4857688629903701636, guid: 07c6c74fd6e338f448ce602a1c24c1ca, type: 3}
   m_PrefabInstance: {fileID: 1870484047}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2111247594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4829864594274237400, guid: 07c6c74fd6e338f448ce602a1c24c1ca, type: 3}
+  m_PrefabInstance: {fileID: 1870484047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c4e3d904269bd429229c463368f988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111718693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,8 +1189,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4259906216692415767, guid: 1287336243b645c4cb2814f3c3401615, type: 3}
+      propertyPath: targetAgent
+      value: 
+      objectReference: {fileID: 2111247594}
+    - target: {fileID: 4259906216692415767, guid: 1287336243b645c4cb2814f3c3401615, type: 3}
       propertyPath: attackDistance
       value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030158017889209880, guid: 1287336243b645c4cb2814f3c3401615, type: 3}
+      propertyPath: m_Speed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
