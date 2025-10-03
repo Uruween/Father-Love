@@ -14,7 +14,6 @@ public class enemyBasic : MonoBehaviour
     [SerializeField] float currDistance;
     [SerializeField] float attackDistance;
     [SerializeField] float live; 
-    private Rigidbody rb;
 
 
 
@@ -24,12 +23,12 @@ public class enemyBasic : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator.SetBool("Hit", false);
+        animator.SetBool("IsAttack", false);
+        animator.SetBool("IsWalk", false);
         if (onAwake)
         {
             agent.SetDestination(targetAgent.position);
         }
-        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -44,11 +43,12 @@ public class enemyBasic : MonoBehaviour
             {
                 agent.SetDestination(targetAgent.position);
                 agent.isStopped = false;
-                animator.SetBool("Hit", false);
+                animator.SetBool("IsWalk", true);
                 if (currDistance <= attackDistance)
                 {
                     agent.isStopped = true;
-                    animator.SetBool("Hit",true);
+                    animator.SetBool("IsWalk", false);
+                    animator.SetBool("IsAttack",true);
                 }
             }
         }

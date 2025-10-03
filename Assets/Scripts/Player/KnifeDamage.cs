@@ -1,31 +1,34 @@
+using System.Collections;
 using UnityEngine;
 
 public class KnifeDamage : MonoBehaviour
 {
-
-   
     [SerializeField] Animator animator;
-
+    private PlayerController playerController;
     [SerializeField] float damage = 10f;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        
+        animator.GetComponent<Animator>();
+        playerController = FindAnyObjectByType<PlayerController>();
     }
+
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetMouseButtonDown(0))
         {
-            animator.SetBool("Buttom", true);
-            
+            StartCoroutine(Attack());
         }
-        else
-        {
-            animator.SetBool("Buttom", false);
-            
-        }
+    }
+    private IEnumerator Attack()
+    {
+        playerController.isAttacking = true;
+        animator.SetBool("Punch", true);
 
+        yield return new WaitForSeconds(4.17f); 
+
+        animator.SetBool("Punch", false);
+        playerController.isAttacking = false;
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    public int itemID; // ID del item según tu base de datos
+    public int itemID;
     private bool isPlayerInRange = false;
+    [SerializeField] Animator animator;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            animator = other.GetComponent<Animator>();
             isPlayerInRange = true;
         }
     }
@@ -23,14 +25,19 @@ public class ItemPickup : MonoBehaviour
 
     private void Update()
     {
+        PickObject();
+    }
+    private void PickObject ()
+    {
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
             if (GameManager.Instance != null && GameManager.Instance.inventory != null)
             {
-                GameManager.Instance.inventory.AddItem(itemID); // Inventario desde el Canvas
+                animator.SetTrigger("PickItem");
+                GameManager.Instance.inventory.AddItem(itemID);
                 Debug.Log("Objeto recogido con ID: " + itemID);
-                Destroy(gameObject); // Destruye el objeto recogido
             }
+            gameObject.SetActive(false);
         }
     }
 }
