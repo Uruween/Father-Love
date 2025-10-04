@@ -602,8 +602,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 46
+  m_CollisionDetection: 1
 --- !u!114 &584319291117094814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,8 +634,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c633cc5623fd040beaadc0a02aa012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLife: 100
   life: 100
   cm: {fileID: 0}
+  animator: {fileID: 104394366813269063}
+  deathAnimationDuration: 2.8
 --- !u!95 &104394366813269063
 Animator:
   serializedVersion: 7

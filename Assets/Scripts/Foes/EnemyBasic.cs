@@ -61,11 +61,11 @@ public class enemyBasic : MonoBehaviour
                 {
                     StartCoroutine(AttackSequence());
                 }
-                else
-                {
+                
                     agent.isStopped = true;
                     animator.SetBool("IsWalk", false);
-                }
+                agent.velocity = Vector3.zero;
+
             }
             else
             {
@@ -76,8 +76,9 @@ public class enemyBasic : MonoBehaviour
         }
         else
         {
-            agent.isStopped = true;
+            agent.isStopped = false;
             animator.SetBool("IsWalk", false);
+
         }
     }
 
@@ -93,6 +94,7 @@ public class enemyBasic : MonoBehaviour
             {
                 agent.isStopped = true;
                 animator.SetBool("IsWalk", false);
+                agent.velocity = Vector3.zero;
             }
         }
         else
@@ -153,11 +155,11 @@ public class enemyBasic : MonoBehaviour
         animator.SetBool("IsWalk", false);
         animator.SetBool("IsAttack", false);
 
-        // animator.SetTrigger("Die");
+        animator.SetTrigger("Dead");
 
         Debug.Log("Enemigo eliminado");
 
-        StartCoroutine(DisableAfterDelay(0.5f));
+        StartCoroutine(DisableAfterDelay(2.7f));
     }
 
     private IEnumerator DisableAfterDelay(float delay)

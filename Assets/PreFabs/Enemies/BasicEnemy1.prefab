@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 352f9926966cc264bafa42053f823d45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 34.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 352f9926966cc264bafa42053f823d45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 352f9926966cc264bafa42053f823d45, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.491
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 352f9926966cc264bafa42053f823d45, type: 3}
       propertyPath: m_LocalRotation.w
@@ -169,7 +169,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 46
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!195 &2267282616350299238
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -250,5 +250,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8377017, y: 1.3014717, z: 0.6111168}
-  m_Center: {x: -0.081149206, y: 0.15073596, z: 0.03130422}
+  m_Size: {x: 0.8377017, y: 1.4454721, z: 0.6111168}
+  m_Center: {x: -0.08114922, y: 0.22273663, z: 0.031304173}
