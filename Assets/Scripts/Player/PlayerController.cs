@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float accelerationSpeed = 3f;
 
     public bool isAttacking { get; set; } = false;
-    public bool isPickingUp { get; set; } = false; 
+    public bool isPickingUp { get; set; } = false;
 
     private float horizontalAxis;
     private float verticalAxis;
@@ -27,7 +27,12 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        // Configuración del Rigidbody para evitar giros
+        rb.constraints = RigidbodyConstraints.FreezeRotation; // Congelar TODA la rotación
+        rb.interpolation = RigidbodyInterpolation.Interpolate; // Suavizar movimiento
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; // Mejor detección de colisión
+
         cm.backgroundColor = Color.black;
     }
 
@@ -40,6 +45,13 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+
+        // CRÍTICO: Forzar rotación solo en Y cada frame de física
+        Vector3 currentRotation = transform.eulerAngles;
+        transform.eulerAngles = new Vector3(0f, currentRotation.y, 0f);
+
+        // Eliminar cualquier velocidad angular residual
+        rb.angularVelocity = Vector3.zero;
     }
 
     private void HandleInput()
@@ -135,8 +147,12 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
         rb.linearVelocity = velocity;
 
-        Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+        // Rotar hacia la dirección de movimiento
+        if (moveDirection != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+        }
     }
 
     private void ChangeWorld()
