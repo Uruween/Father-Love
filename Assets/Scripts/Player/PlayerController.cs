@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float accelerationSpeed = 3f;
 
     public bool isAttacking { get; set; } = false;
-    public bool isPickingUp { get; set; } = false; // Para bloquear movimiento al recoger items
+    public bool isPickingUp { get; set; } = false; 
 
     private float horizontalAxis;
     private float verticalAxis;
@@ -44,7 +44,6 @@ public class PlayerController : MonoBehaviour
 
     private void HandleInput()
     {
-        // Si está atacando o recogiendo items, no procesar más input
         if (isAttacking || isPickingUp)
         {
             horizontalAxis = 0f;
@@ -55,7 +54,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // AGACHARSE - Control Izquierdo
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             isCrouching = true;
@@ -65,7 +63,6 @@ public class PlayerController : MonoBehaviour
             isCrouching = false;
         }
 
-        // Obtener input de movimiento
         horizontalAxis = Input.GetAxis("Horizontal");
         verticalAxis = Input.GetAxis("Vertical");
 
@@ -117,7 +114,6 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        // Detener movimiento si está atacando, recogiendo items, o no hay dirección
         if (moveDirection == Vector3.zero || isAttacking || isPickingUp)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);

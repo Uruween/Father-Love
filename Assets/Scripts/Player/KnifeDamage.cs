@@ -25,7 +25,7 @@ public class KnifeDamage : MonoBehaviour
         playerController.isAttacking = true;
         animator.SetBool("Punch", true);
 
-        yield return new WaitForSeconds(4.17f); 
+        yield return new WaitForSeconds(0.8f); 
 
         animator.SetBool("Punch", false);
         playerController.isAttacking = false;

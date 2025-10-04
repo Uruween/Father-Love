@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 352f9926966cc264bafa42053f823d45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.58
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 352f9926966cc264bafa42053f823d45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 352f9926966cc264bafa42053f823d45, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.491
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 352f9926966cc264bafa42053f823d45, type: 3}
       propertyPath: m_LocalRotation.w
@@ -113,11 +113,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetAgent: {fileID: 0}
   animator: {fileID: 700675643003614694}
-  timeBefore: 2
-  time: 0
   actionDistance: 10
-  currDistance: 0
   attackDistance: 2.5
+  currDistance: 0
+  attackAnimationDuration: 1.5
+  attackCooldown: 2
   live: 100
   onAwake: 0
 --- !u!136 &5266373350290114114
