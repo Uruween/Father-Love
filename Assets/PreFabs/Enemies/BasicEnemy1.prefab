@@ -114,7 +114,7 @@ MonoBehaviour:
   targetAgent: {fileID: 0}
   animator: {fileID: 700675643003614694}
   actionDistance: 10
-  attackDistance: 2.5
+  attackDistance: 1
   currDistance: 0
   attackAnimationDuration: 1.5
   attackCooldown: 2
@@ -250,5 +250,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8377017, y: 1, z: 0.6111168}
-  m_Center: {x: -0.08114915, y: -0.0000000026816158, z: 0.031304263}
+  m_Size: {x: 0.8377017, y: 1.3014717, z: 0.6111168}
+  m_Center: {x: -0.081149206, y: 0.15073596, z: 0.03130422}

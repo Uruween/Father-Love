@@ -431,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 8312803147262072127}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 3.3600001, z: 0.12}
+  m_LocalPosition: {x: 0.06, y: 3.57, z: -0.21}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -467,7 +467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10dc31c7eed5eec4ab3ca97319f5ac33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10dc31c7eed5eec4ab3ca97319f5ac33, type: 3}
       propertyPath: m_LocalPosition.z
@@ -564,7 +564,7 @@ PrefabInstance:
       addedObject: {fileID: 104394366813269063}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 10dc31c7eed5eec4ab3ca97319f5ac33, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6158663806856242760}
+      addedObject: {fileID: 855495506019445209}
     - targetCorrespondingSourceObject: {fileID: -4728426434207774260, guid: 10dc31c7eed5eec4ab3ca97319f5ac33, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3098890406312784228}
@@ -658,8 +658,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &6158663806856242760
-BoxCollider:
+--- !u!136 &855495506019445209
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -676,9 +676,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5379455, y: 4.325288, z: 2.4340305}
-  m_Center: {x: -0.08313215, y: 2.1614375, z: -0.50918466}
+  serializedVersion: 2
+  m_Radius: 0.7655031
+  m_Height: 4.3975334
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.109868, z: -0.16272777}
 --- !u!4 &6556581050776120950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 10dc31c7eed5eec4ab3ca97319f5ac33, type: 3}
