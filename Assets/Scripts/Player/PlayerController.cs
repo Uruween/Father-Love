@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -18,6 +19,10 @@ public class PlayerController : MonoBehaviour
     private float verticalAxis;
     private Vector3 moveDirection;
     private float acceleration = 0f;
+    PlayerInput playerInput;
+
+    public GameObject lantern;
+    [SerializeField]bool isLanternOn = false;
 
     public Camera cm;
     private Animator animator;
@@ -27,19 +32,24 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-
+        playerInput = GetComponent<PlayerInput>();
         // Configuración del Rigidbody para evitar giros
         rb.constraints = RigidbodyConstraints.FreezeRotation; // Congelar TODA la rotación
         rb.interpolation = RigidbodyInterpolation.Interpolate; // Suavizar movimiento
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; // Mejor detección de colisión
-
-        cm.backgroundColor = Color.black;
+        lantern.SetActive(false);
+        isLanternOn = false;
     }
 
     private void Update()
     {
         HandleInput();
         ChangeWorld();
+        if(playerInput.actions["Activate"].WasPressedThisFrame())
+        {
+            isLanternOn = !isLanternOn;
+            lantern.SetActive(isLanternOn);
+        }
     }
 
     private void FixedUpdate()
@@ -75,11 +85,11 @@ public class PlayerController : MonoBehaviour
             isCrouching = false;
         }
 
-        horizontalAxis = Input.GetAxis("Horizontal");
-        verticalAxis = Input.GetAxis("Vertical");
+        horizontalAxis = playerInput.actions["Move"].ReadValue<Vector2>().x;
+        verticalAxis = playerInput.actions["Move"].ReadValue<Vector2>().y;
 
         bool isMoving = Mathf.Abs(horizontalAxis) > 0.1f || Mathf.Abs(verticalAxis) > 0.1f;
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        bool isRunning = playerInput.actions["Run"].IsPressed();
 
         float targetAcceleration = 0f;
 
@@ -138,7 +148,7 @@ public class PlayerController : MonoBehaviour
         {
             actualSpeed = walkSpeed * 0.5f;
         }
-        else if (Input.GetKey(KeyCode.LeftShift))
+        else if (playerInput.actions["Run"].IsPressed())
         {
             actualSpeed = runSpeed;
         }
